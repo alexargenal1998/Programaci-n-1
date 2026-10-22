@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package saludos;
-
+import java.util.Scanner;
 /**
  *
  * @author alexa
  */
 public class Saludos {
-
+    
     /**
      * @param args the command line arguments
      */
@@ -74,8 +74,62 @@ public class Saludos {
         System.out.printf("el detalle estaba con los %f metros", altura);
         System.out.print("Media!!!\n");
         System.out.printf("Pero lo compensaba con los %d anios de buena vibra!!", edad);
+        
+        Scanner teclado = new Scanner(System.in); 
+        System.out.printf("Tu nombre no es %s", nombre);
+        System.out.print("Como te llamas realmente?");
+        nombre = teclado.next();
+        // .next() - captura cadena 
+        System.out.printf(" Excelente %s, gracias gracias", nombre);
+        
+        System.out.printf("\n Muy bien %s, y se puede saber tu edad?", nombre);
+        edad = teclado.nextInt();
+        // .nextInt() - Captura entero
+        
+        System.out.printf("\n Ecole, te miras muy bien para los %d anios que te cargas", edad);
+        System.out.printf("\n Y no parece que midas %.2f CM", altura);
+        System.out.printf("\n O cuanto medis realmente?");
+        altura = teclado.nextDouble();
+        //.nextDouble() - captura altura
+        
+        System.out.printf("\n Solo una pregunta mas %s", nombre);
+        System.out.printf("\n Eres Masculino (M) o Femenino (F) %s", nombre);
+        genero = teclado.next().charAt(0);
+        
+        System.out.println("\n Datos generales");
+        System.out.println("--------------");
+        System.out.printf("Nombre: %s",nombre);
+        System.out.printf("Edad: %d",edad);
+        System.out.printf("altura: %f", altura);
+        System.out.printf("Genero: %c", genero);
+        System.out.println("--------------");
+        
+        int numero=0; 
+        System.out.println("---------------");
+        System.out.printf("\n Dice %s que tiene %d anios",nombre,edad);
+        System.out.println("\n Yo creo que tiene mas... cuantos mas seran?");
+        numero = teclado.nextInt();
+        edad = edad + numero; // operacion aritmetica de Suma
+        System.out.printf("Es decir... %d", edad);
+        
+       /* Orden de operaciones
+        1. Parentesis 
+        2. Exponentes
+        3.Multiplicacion y division (Izq a Der)
+        4. Suma y resta (Izq a Der)
+        */
        
-       
+       double resultadoOperacion = 0;
+       resultadoOperacion = 5 + 3 - 1 * 2;
+        System.out.printf("\n Resultado: %.2f", resultadoOperacion);
+        
+        resultadoOperacion = 2 * (5 + 3) - 1;
+        System.out.printf("\n Resultado: %.2f", resultadoOperacion);
+        
+        resultadoOperacion = 2 * (5 + 3) - 1;
+        System.out.printf("\n Resultado: %.2f", resultadoOperacion);
+
+
     }// Fin de main 
     
 }// Fin de class
